@@ -1,0 +1,264 @@
+﻿<%@ Master Language="VB" CodeFile="usermaster.master.vb" Inherits="usermaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="StyleSheet2.css" rel="stylesheet" type="text/css" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+   <style>
+   *
+   {
+       padding:0px;
+       margin:0px;      
+   }
+  
+     
+ .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  color:Black;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.iframely-embed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: white;
+}
+
+#app {
+  // opacity: 0 !important;
+  // visibility: hidden;
+  z-index: 100;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+
+  height: 90vh;
+  width: 100%;
+ 
+  color: #3a3535;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+.title {
+  padding-left: 1em;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  
+  font-family: "Prata", serif;
+  font-size: 8vw;
+  width: 100%;
+  z-index: 2;
+
+  // start
+
+  > .title-inner {
+    display: inline-block;
+  }
+}
+
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes outer-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes inner-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.cafe,
+.mozart {
+  animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+  // outline: 1px solid red;
+}
+
+// [class*='inner'] {
+//   outline: 1px solid blue;
+// }
+
+.title-inner {
+  display: inline-block;
+  animation: inner-left 1s 1s ease both;
+}
+
+.cafe-inner 
+{
+    color:Black;
+  display: inline-block;
+  animation: inner-left 1s 1s ease both,
+    text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.mozart-inner 
+{
+    color:Black;
+  animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.title {
+  animation: outer-left 1s 1s ease both;
+}
+
+.cafe {
+  // start
+  > .cafe-inner {
+    display: inline-block;
+  }
+}
+
+.mozart {
+  display: inline-block;
+}
+
+.image {
+  grid-row: 1;
+  grid-column: 2;
+  margin-left: -2rem;
+  opacity: 0.7;
+
+  animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+
+  @keyframes image-in {
+    from {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Replay animation!
+body:active * {
+  animation: none !important;
+}
+
+  
+  
+   </style>
+  
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+
+      <h1 class="style1" style="background-color: #333333; color: white;" 
+                font-color:black align="center" > 
+                <asp:Image ID="Image1" runat="server" Height="54px" ImageUrl="~/images/My project (1).jpg" 
+                    Width="122px" style="margin-left: 0px" />
+                &nbsp; Aimers Gym Management System</h1>
+                <br />
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 65px;">
+  <div class="container-fluid">
+   <a class="navbar-brand" href="#">AGMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="userhome.aspx">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="trainers.aspx">Show Trainers</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="msearchprofile.aspx">Search Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="feedback.aspx">Feedback</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dietplan.aspx">Dietplan</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="plan.aspx">Membership Plan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Alogout.aspx">logout</a>
+        </li>
+       
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                            
+                     </asp:ContentPlaceHolder>
+         </form>     
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="StyleSheet2.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+     <style>
+   *
+   {
+       padding:0px;
+       margin:0px;
+        
+           
+
+   }
+     .img
+        {
+            display:flex;
+            flex-wrap:wrap;
+            margin:0 50px;
+            padding:30px;
+        }
+        .photo
+        {
+            max-width:31.33%;
+            padding:0 10px;
+            height:240px;
+  
+   
+            }
+            .photo img
+            {
+                width:100%;
+                height:100%;
+                
+            }
+
+  
+  
+   </style>
+   <h1 class="style1" style="background-color: #333333; color: white;" 
+                font-color:black align="center" > 
+                <asp:Image ID="Image1" runat="server" Height="54px" ImageUrl="~/images/My project (1).jpg" 
+                    Width="122px" style="margin-left: 0px" />
+                &nbsp; Aimers Gym Management System</h1>
+                <br />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+   
+        
+    </div>
+    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+    </form>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
